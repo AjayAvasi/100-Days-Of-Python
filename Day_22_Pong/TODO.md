@@ -24,4 +24,4 @@ Each side will have their own scoreboard class
 - [x] Make the computer go up and down
 - [x] Turn animations off
 - [x] Create a game loop
-- [ ] Create dashed-line to indicate the center of the screen 
+- [x] Create dashed-line to indicate the center of the screen 
