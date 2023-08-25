@@ -24,12 +24,16 @@ class Snake:
             start_x -= 20
 
         self.head = self.body[0]
+        self.turns = []
 
     def move(self):
         for i in range(len(self.body) - 1, 0, -1):
             new_x = self.body[i - 1].xcor()
             new_y = self.body[i - 1].ycor()
             self.body[i].goto(x=new_x, y=new_y)
+        if len(self.turns) > 0:
+            self.turns[0]()
+            del self.turns[0]
         self.head.forward(MOVE_DISTANCE)
 
     def right(self):
@@ -47,6 +51,18 @@ class Snake:
     def down(self):
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
+
+    def q_right(self):
+        self.turns.append(self.right)
+
+    def q_left(self):
+        self.turns.append(self.left)
+
+    def q_up(self):
+        self.turns.append(self.up)
+
+    def q_down(self):
+        self.turns.append(self.down)
 
     def grow(self):
         tail = Turtle()

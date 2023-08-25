@@ -17,10 +17,10 @@ scoreboard = Scoreboard()
 
 
 def set_keys(player):
-    screen.onkey(player.up, "Up")
-    screen.onkey(player.down, "Down")
-    screen.onkey(player.left, "Left")
-    screen.onkey(player.right, "Right")
+    screen.onkey(player.q_up, "Up")
+    screen.onkey(player.q_down, "Down")
+    screen.onkey(player.q_left, "Left")
+    screen.onkey(player.q_right, "Right")
 
 
 game_running = True
