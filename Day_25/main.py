@@ -47,10 +47,7 @@ while game_on:
             writer.goto(x, y)
             writer.write(answer, False, "center")
 
-missed = {"Missed States": []}
-for state in state_data.state.to_list():
-    if state not in already_guessed:
-        missed["Missed States"].append(state)
+missed = {"Missed States": [state for state in state_data.state.to_list() if state not in already_guessed]}
 
 pandas.DataFrame(missed).to_csv("Missed_States.csv")
 
